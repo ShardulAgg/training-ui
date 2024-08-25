@@ -6,11 +6,11 @@ networks:
 services:
 
   mt-backend:
-    image: hack-backend
+    image: mt-backend
     build:
       context: ./backend
       target: builder
-    container_name: hack-backend
+    container_name: mt-backend
     networks:
       - mt-network
     env_file:
@@ -27,7 +27,7 @@ services:
 
   mongo:
     image: mongo:latest
-    container_name: hack-mongo
+    container_name: mt-mongo
     networks:
       - mt-network
     ports:
